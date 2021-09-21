@@ -12,3 +12,6 @@ describe('App Component', () => {
     expect(wrapper).not.toBeNull();
   });
 });
+
+
+// <Bar labelData={data.date} labelData1={data.time} bmiData={data.bmi} user_id={data.user_id} />

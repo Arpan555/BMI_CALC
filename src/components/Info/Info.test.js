@@ -9,6 +9,7 @@ describe("Info Component", () => {
     height: "176",
     id: "2b926f1b-db1f-45ac-af87-2130da1e1a2f",
     date: "10/25/2019",
+    time:"01:34:43",
     bmi: "16.14",
     deleteCard: jest.fn()
   };
@@ -33,6 +34,10 @@ describe("Info Component", () => {
 
     expect(wrapper.find("[data-test='date']").text()).toEqual(
       "Date: 10/25/2019"
+    );
+
+    expect(wrapper.find("[data-test='time']").text()).toEqual(
+      "Time: 01:34:43"
     );
   });
 

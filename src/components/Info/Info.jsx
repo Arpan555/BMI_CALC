@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Info = ({ weight, height, id, date, bmi, deleteCard }) => {
+const Info = ({ weight, height, id, date,time, bmi, deleteCard }) => {
   const handleDelete = () => {
     deleteCard(id);
   };
@@ -17,6 +17,8 @@ const Info = ({ weight, height, id, date, bmi, deleteCard }) => {
             <span data-test="weight">Weight: {weight} kg</span>
             <span data-test="height">Height: {height} cm</span>
             <span data-test="date">Date: {date}</span>
+            <span data-test="time">Time: {time}</span>
+            
           </div>
 
           <button className="delete-btn" onClick={handleDelete}>
@@ -33,6 +35,7 @@ Info.propTypes = {
   height: PropTypes.string,
   id: PropTypes.string,
   date: PropTypes.string,
+  time: PropTypes.string,
   bmi: PropTypes.string,
   deleteCard: PropTypes.func
 };

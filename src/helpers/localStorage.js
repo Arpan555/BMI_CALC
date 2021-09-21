@@ -10,7 +10,7 @@ export const getData = (key) => {
 
 export const storeData = (key, item) => {
 	if (!localStorage) return;
-
+	
 	try {
 		return localStorage.setItem(key, JSON.stringify(item));
 	} catch (err) {

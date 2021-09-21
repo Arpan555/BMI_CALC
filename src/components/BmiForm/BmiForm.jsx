@@ -5,27 +5,29 @@ import '../App/App.css';
 const initialValues = {
 	weight: '',
 	height: '',
-	date: ''
+	date: '',
+	time:''
 }
 
 const BmiForm = ({ change }) => {
 	const [state, setState] = useState(initialValues);
-
 	const handleChange = e => {
 		let { value, name } = e.target;
 		if (value > 999) {
 			value = 999;
 		}
 		const date = new Date().toLocaleString().split(',')[0];
+		const time = new Date().toLocaleString().split(",")[1];
 		setState({
 			...state,
 			[name]: value,
-			date
+			date,
+			time
 		});
 	};
 
 	const handleSubmit = () => {
-		change(state);
+		change(state); 
 		setState(initialValues);
 	};
 
