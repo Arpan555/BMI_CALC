@@ -3,7 +3,7 @@ import { Line } from 'react-chartjs-2';
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router';
 
-const Bar = ({ labelData,labelData1, bmiData }) => {
+const Bar = ({ labelData,bmiData }) => {
   const {id} = useParams()
   const data = canvas => {
     const ctx = canvas.getContext('2d');
@@ -13,7 +13,6 @@ const Bar = ({ labelData,labelData1, bmiData }) => {
 
     return {
       labels: labelData,
-      labels1:labelData1,
       datasets: [
         {
           label: 'BMI',
@@ -37,7 +36,6 @@ const Bar = ({ labelData,labelData1, bmiData }) => {
           scaleLabel: {
             display: true,
             labelString: 'Date',
-            label1String:"Time",
             fontSize: 18,
             fontColor: 'white'
           },

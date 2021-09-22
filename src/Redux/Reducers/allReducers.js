@@ -1,4 +1,4 @@
-import { SET_USER,SET_DATA } from "../Actions/index";
+import { SET_USER,SET_DATA, RESET_DATA } from "../Actions/index";
 const initialState={
     user:[],
     setData:{}
@@ -15,6 +15,11 @@ export default function reducer(state=initialState,action){
             ...state,
             setData:{...state.setData,...action.payload}
           }
+        case RESET_DATA:
+            return{
+            ...state,
+            setData:{}
+            }
         default:
             return state
     }

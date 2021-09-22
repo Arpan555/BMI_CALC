@@ -8,7 +8,7 @@ import Info from '../Info/Info';
 import Bar from '../Bar/Bar';
 import { getData, storeData } from '../../helpers/localStorage';
 import { useParams } from 'react-router';
-import {setData} from "../../Redux/Actions/allAction"
+import {setData,resetData} from "../../Redux/Actions/allAction"
 const Apps = () => {
   const initialState = () => getData('data') || [];
   const [state, setState] = useState(initialState);
@@ -16,11 +16,14 @@ const Apps = () => {
   const {id}=useParams()
   useEffect(() => {
     storeData('data', state);
-    const date = state.map(obj => obj.user_id===id?  obj.date: "");
-    const time =state.map(obj =>  obj.user_id===id? obj.time: "");
-    const bmi = state.map(obj =>  obj.user_id===id? obj.bmi: "");
+    const user_data=state.filter(data=> data.user_id === id)
+    const date = user_data.map(obj => obj.date);
+    const time =user_data.map(obj => obj.time);
+    const bmi = user_data.map(obj => obj.bmi);
     let newData = { date,time, bmi };
+    dispatch(resetData())
     dispatch(setData(newData))
+    
   }, [state]);
   const handleChange = val => {
     let heightInM = val.height / 100;
