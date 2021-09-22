@@ -1,8 +1,10 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import PropTypes from 'prop-types';
+import { useParams } from 'react-router';
 
-const Bar = ({ labelData,labelData1, bmiData,user_id }) => {
+const Bar = ({ labelData,labelData1, bmiData }) => {
+  const {id} = useParams()
   const data = canvas => {
     const ctx = canvas.getContext('2d');
     const gradient = ctx.createLinearGradient(63, 81, 181, 700);
@@ -12,7 +14,6 @@ const Bar = ({ labelData,labelData1, bmiData,user_id }) => {
     return {
       labels: labelData,
       labels1:labelData1,
-      user_id:user_id,
       datasets: [
         {
           label: 'BMI',

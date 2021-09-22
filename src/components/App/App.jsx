@@ -16,9 +16,9 @@ const Apps = () => {
   const {id}=useParams()
   useEffect(() => {
     storeData('data', state);
-    const date = state.map(obj => obj.date);
-    const time =state.map(obj =>obj.time);
-    const bmi = state.map(obj => obj.bmi);
+    const date = state.map(obj => obj.user_id===id?  obj.date: "");
+    const time =state.map(obj =>  obj.user_id===id? obj.time: "");
+    const bmi = state.map(obj =>  obj.user_id===id? obj.bmi: "");
     let newData = { date,time, bmi };
     dispatch(setData(newData))
   }, [state]);
@@ -54,7 +54,7 @@ const Apps = () => {
       <div className='row'>
         <div className='col m12 s12'>
           <BmiForm change={handleChange} />
-          <Bar labelData={data.date} labelData1={data.time} bmiData={data.bmi} user_id={data.user_id} />
+          <Bar labelData={data.date} labelData1={data.time} bmiData={data.bmi} />
 
                 <div>
             <div className='row center'>

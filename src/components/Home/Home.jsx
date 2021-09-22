@@ -28,8 +28,8 @@ const Home = () => {
                 <h1>Add User</h1>
                 <form onSubmit={handleSubmit}>
                     <label>User</label>
-                    <input type="text" name="user" value={form.user} onChange={handleChange} />
-                    <input className="bt" type="submit" value="Add" />
+                    <input className="input" type="text" name="user" value={form.user} onChange={handleChange} />
+                    <input className="button" type="submit" value="Add" />
                 </form>
                 <br/><br/>
                 {user && user.map(data=>
