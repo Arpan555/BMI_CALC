@@ -2,6 +2,24 @@ body {
   background-color: #172b4d;
 }
 
+.input1 {
+  background-color: #fff !important;
+  border-radius: 4px !important;
+  width: 40% !important;
+  padding: 0px 15px !important;
+}
+
+.submit-button{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
 input {
   background-color: #fff !important;
   border-radius: 44px !important;
@@ -99,3 +117,4 @@ label {
 .delete-btn:focus {
   background-color: #e74c3c;
 }
+

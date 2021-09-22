@@ -57,7 +57,7 @@ const Apps = () => {
       <div className='row'>
         <div className='col m12 s12'>
           <BmiForm change={handleChange} />
-          <Bar labelData={data.date} labelData1={data.time} bmiData={data.bmi} />
+          <Bar labelData={data.date} bmiData={data.bmi} />
 
                 <div>
             <div className='row center'>
